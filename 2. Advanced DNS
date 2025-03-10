@@ -1,0 +1,82 @@
+DNS Query Packet Analysis
+
+DNS Caching - When you already visit a website, the second response is called DNS Caching. The resolver loads up quicker
+
+DNS Information is stored in the DNS Cache.
+
+C:\Windows\system32>ipconfig/displaydns
+
+Windows IP Configuration
+  example.org
+  ----------------------------
+  Record Name....:example.org
+  Record Type.....:1
+  Time To Live....:7200
+  Data Length.....:4
+  Section.......:Awnser
+  A(Host) Record...:93.184.216.34
+
+TTL - The amount of tim DNS Information is kept in the DNS Cache.
+
+This is done in seconds
+
+  7200 Seconds / 60 seconds per minutes = 120 minutes
+  120 Minutes / 60 minutes per hour = 2 hours 
+
+DNS Forwarding
+
+Internal DNS 
+
+Too much network traffic - Duplicate Server, Update Config, Load Balancing 
+
+DNS Forwarding - Forwards DNS records 
+
+Forward DNS Queries to:
+Different Internal Server - DNS resolution
+Public or External DNS Resolver
+
+Google Public DNS Servers:
+
+8.8.8.8 and 8.8.4.4 - Google's Public DNS - External DNS
+
+DNS Forwarding - Alleviates the load over solving DNS queries from our main server to a different server that is dedicated for DNS resolution. The dedicated DNS resolver can then build up its DNS Cache, resulting in faster DNS resolution times.
+
+DNS Security
+
+Denial of Service (DOS) - Threat Actor sends multiple queries.
+Distributed Denial of Service (DDOS) Attack - Multiple threat actors or different services attack the same service.
+
+Man-in-the-Middle or On-Path Attack
+Whereby the threat actor will capture the DNS packet, change the IP address of the domain, so as to direct you to a malicious website. This is known as DNS spoofing. 
+
+DNS Hijacking
+The threat actor just redirects the DNS query to an entirely different malicious DNS server. This is DNS hijacking. 
+
+DNS Cache Poisoning 
+Threat actors gain access to the DNS server and also gain access to the DNS server and alter the DNS record swith malicious IP addresses.
+
+DNS Cyberattacks
+DoS/DDoS attack
+DNS Spoofing
+DNS hijacking
+DNS cache poisoning
+
+DNS Security 
+Change DNS port settings
+Standard port for DNS: port 53
+
+Use multiple DNS servers for redundancy - Swaps to another during DOS/DDOS attack
+Configure DNSSEC - DNSSEC is a security protocol that checks the authenticity of DNS queries using digital signatures. This way threat actors can't spoof the DNS packets and send users to malicious websites.
+
+Use Firewall
+Firewall is a device or system that you place in network to allow or deny traffic
+Packet inspection 
+Throttling (limiting bandwidth) 
+
+Cyber Attacks
+- DOS/DDoS attack
+- DNS Spoofing
+- DNS hijacking
+- DNS cache poisoning
+
+
