@@ -1,0 +1,88 @@
+Basic DNS Terms
+
+DNS (Domain Name System) or (Domain Name Server)
+FQDN (Fully Qualified Domain Name)
+
+DNS Resolution
+Mapping or translation of IP address to a domain name
+
+1. Forward Look Up
+You know the website name but not the IP Address.
+
+2. Reverse Look Up
+You know the IP Address but not the website name.
+
+DNS Domain Hierarchy
+
+www.learning.linkedin.com.
+
+The end period . is known as the root.
+
+.com - TLD - Top Layer Domain  - Typically tells you the purpose of the website or the country.
+
+SLD / 2LD - Second Layer Domain
+
+A - Record - Shows IP4 Address
+TTL - Time to live - Amount of time DNS resolver stores the information
+
+AAAA - Record - Stores the IPv6 address information
+
+An IPv4 address has 32 bits
+An IPv4 address has 128 bits - 4x bits
+
+CNAME - Canonical Name
+Target
+
+MX - Mail Exchange Record
+
+  Preference
+  
+  The lower the number is better - 20 < 10
+
+SPF - Sender Policy Framework
+
+  SPF - Used to verify income email / Used to authenticate outgoing email
+  
+  in Google Domains, SPF records use a TXT record.
+  
+  v=spf1 
+
+NS - Name Server 
+
+SOA - Start of authority - Contains authoritive information
+
+  MNAME - Primary name of the server
+  RNAME - Email Address or the RNAME who is responsible for the domain.
+  Serial
+  Refresh
+  Retry
+  Expire
+  TTL
+
+PTR Record
+
+CNAME 
+
+1. Forward Lookup - I know the website name - What is the IP Address? Check the A or AAAA record.
+2. I know the IP Address. What is the website name? Check the PTR/pointer record 
+
+PTR records are typically set by the owner of the IP address.
+
+SRV - Service Record
+
+SRV Record: Exmple
+xmpp._tcp.example.com. 86400 IN SRV 10 5 5223 server.example.com
+
+_service._proto.name. TTL class type of record priority weight port target
+
+TXT - Text Record
+Can contain SPF, can contain human or machine readable notes
+
+Other types of DNS Record Types 
+- ANY
+- CAA
+- DNSKEY
+- DS 
+- TLSA
+- TSIG
+
